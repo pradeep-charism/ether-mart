@@ -31,7 +31,7 @@
 <div class="jumbotron">
   <div class="container text-center">
     <h1>Ether Mart!</h1>
-    <p>Your favorite block chain online store</p>
+    <p>Your next door block chain online store</p>
   </div>
 </div>
 
@@ -60,6 +60,37 @@
     </div>
   </div>
 </nav>
+
+<div class="container">
+  <div id="shopsRow" class="row">
+    <!-- PRODUCTS LOAD HERE -->
+  </div>
+</div>
+
+<div id="shopTemplate" style="display: none;">
+  <div class="col-sm-6 col-md-4 col-lg-3">
+    <div class="panel panel-default panel-shop">
+      <div class="panel-heading">
+        <h3 class="panel-title">Scrappy</h3>
+      </div>
+      <div class="panel-body">
+        <img alt="140x140" data-src="holder.js/140x140" class="img-rounded img-center" style="width: 100%;"
+             src="https://animalso.com/wp-content/uploads/2017/01/Golden-Retriever_6.jpg"
+             data-holder-rendered="true">
+        <br/><br/>
+        <strong>Desc</strong>: <span class="shop-desc">Golden Retriever</span><br/>
+        <strong>Cost</strong>: <span class="shop-cost">3</span><br/>
+        <strong>Seller</strong>: <span class="shop-location">Warren, MI</span><br/><br/>
+        <div id="btngroup" class="btn" data-toggle="buttons-radio">
+          <button type="button" class="btn btn-primary btn-adopt" data-id="0">Buy</button>
+          <button type="button" class="btn btn-primary btn-release" data-id="0">Sell</button>
+        </div>
+        <button type="button" class="btn btn-default btn-show-price" data-id="0">$</button>
+
+      </div>
+    </div>
+  </div>
+</div>
 
 <div class="container">
   <div class="row">
@@ -121,5 +152,8 @@
   </form>
 </footer>
 
+<script src="js/web3.min.js"></script>
+<script src="js/truffle-contract.js"></script>
+<script src="js/ether-mart.js"></script>
 </body>
 </html>
