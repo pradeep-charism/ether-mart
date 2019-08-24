@@ -2,3 +2,5 @@
 
 npm init
 truffle init
+npm install
+npm run dev
