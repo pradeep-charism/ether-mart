@@ -1,0 +1,141 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Welcome to Ether Mart!</title>
+
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/site.css" rel="stylesheet">
+
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+</head>
+<body>
+
+<div class="jumbotron">
+  <div class="container text-center">
+    <h1>Ether Mart!</h1>
+    <p>Your next door block chain online store</p>
+  </div>
+</div>
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Logo</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="#">Products</a></li>
+        <li><a href="#">Deals</a></li>
+        <li><a href="#">Stores</a></li>
+        <li class="active"><a href="Contact.html">Contact</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#"><span class="glyphicon glyphicon-user"></span> My Account</a></li>
+        <li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+  <div id="page">
+    <section id="body" class="container">
+      <p><strong>Send your queries</strong></p>
+      <div class="row">
+        <form class="form-horizontal">
+          <div class="form-group">
+            <label for="nameInput" class="control-label col-md-2">Your Name</label>
+            <div class="col-md-10">
+              <div class="input-group">
+                <span class="input-group-addon"><span class="glyphicon glyphicon-chevron-down"></span></span>
+                <input type="text" name="nameInput" class="form-control" placeholder="e.g. Your Name" />
+                <span class="input-group-addon">!</span>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="emailInput" class="control-label col-md-2">Email</label>
+            <div class="col-md-10">
+              <div class="input-group">
+                <span class="input-group-addon">@</span>
+                <input type="email" name="emailInput" class="form-control" placeholder="e.g. Your Email" />
+              </div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="control-label col-md-2">Reason</label>
+            <div class="col-md-10">
+              <div class="dropdown">
+                <button class="btn btn-success" id="pickButton">Pick One...</button>
+                <button class="btn btn-success" data-toggle="dropdown">
+                  <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu" id="reasonDropdown">
+                  <li><a href="#" tabindex="-1">Adoration</a>
+                  </li>
+                  <li><a href="#" tabindex="-1">Ordering a White Russian</a>
+                  </li>
+                  <li><a href="#" tabindex="-1">Complaint</a>
+                  </li>
+                  <li><a href="#" tabindex="-1">I am lost</a>
+                  </li>
+                </ul>
+
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="control-label col-md-2">Message</label>
+            <div class="col-md-10">
+              <textarea cols="40" rows="6" class="form-control" placeholder="e.g. The Message"></textarea>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-md-10 col-md-offset-2">
+              <input type="submit" value="Submit" class="btn btn-success" />
+            </div>
+          </div>
+        </form>
+      </div>
+      <h3>Our fake address</h3>
+      <div>
+        <address>
+          Ether Mart
+          <br />123 Tampines Street 12
+          <br />Singapore 521123
+          <br />
+          <span class="glyphicon glyphicon-phone-alt"> 12312312</span>
+        </address>
+        <address>
+          <strong>Support:</strong> <a href="mailto:Support@ethermart.com">Support@ethermart.com</a>
+          <br />
+          <strong>Marketing:</strong> <a href="mailto:Marketing@ethermar.com">Marketing@ethermart.com</a>
+        </address>
+      </div>
+    </section>
+    <hr />
+    <footer class="container">
+      <p>All rights reserved to <a href="http://www.ethermart.com/">Ether Mart</a>.</p>
+
+    </footer>
+  </div>
+
+  <script src="js/jquery-2.0.3.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/site.js"></script>
+</body>
+
+</html>

@@ -7,6 +7,7 @@
   <title>Welcome to Ether Mart!</title>
 
   <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/site.css" rel="stylesheet">
 
   <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -14,25 +15,6 @@
   <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
   <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
   <![endif]-->
-</head>
-<style>
-    /* Remove the navbar's default rounded borders and increase the bottom margin */
-    .navbar {
-      margin-bottom: 50px;
-      border-radius: 0;
-    }
-
-    /* Remove the jumbotron's default bottom margin */
-     .jumbotron {
-      margin-bottom: 0;
-    }
-
-    /* Add a gray background color and some padding to the footer */
-    footer {
-      background-color: #f2f2f2;
-      padding: 25px;
-    }
-  </style>
 </head>
 <body>
 
@@ -55,7 +37,7 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li><a href="#">Home</a></li>
+        <li><a href="index.html">Home</a></li>
         <li><a href="#">Products</a></li>
         <li><a href="#">Deals</a></li>
         <li><a href="#">Stores</a></li>
@@ -94,47 +76,8 @@
           </div>
 
           <div class="form-group">
-            <label class="control-label col-md-2">Favorite</label>
-            <div class="col-md-10">
-              <div class="btn-group btn-group-sm" data-toggle="buttons">
-                <label class="btn btn-success">
-                  <input type="radio">The Dude</label>
-                <label class="btn btn-success">
-                  <input type="radio">Donny</label>
-                <label class="btn btn-success">
-                  <input type="radio">Maude</label>
-                <div class="btn-group btn-group-sm">
-                  <button class="btn btn-success">Other</span>
-                  </button>
-                  <button class="btn btn-success" data-toggle="dropdown">
-                    <span class="caret"></span>
-                  </button>
-                  <ul class="dropdown-menu">
-                    <li><a href="#" tabindex="-1">Walter</a>
-                    </li>
-                    <li><a href="#" tabindex="-1">Bunny</a>
-                    </li>
-                    <li class="divider"></li>
-                    <li class="disabled"><a href="#" tabindex="-1">The Big Lebowski</a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-
-
-
-            </div>
-          </div>
-
-          <div class="form-group">
             <label class="control-label col-md-2">Reason</label>
             <div class="col-md-10">
-              <!-- <select class="form-control">
-                <option>Adoration</option>
-                <option>Ordering a White Russian</option>
-                <option>Complaint</option>
-                <option>I am lost</option>
-              </select> -->
               <div class="dropdown">
                 <button class="btn btn-success" id="pickButton">Pick One...</button>
                 <button class="btn btn-success" data-toggle="dropdown">
@@ -174,8 +117,7 @@
           <br />123 Tampines Street 12
           <br />Singapore 521123
           <br />
-          <abbr title="Phone">P:</abbr>
-          +65 12312312
+          <span class="glyphicon glyphicon-phone-alt"> 12312312</span>
         </address>
         <address>
           <strong>Support:</strong> <a href="mailto:Support@ethermart.com">Support@ethermart.com</a>
