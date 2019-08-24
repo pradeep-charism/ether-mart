@@ -3,7 +3,7 @@ App = {
   contracts: {},
 
   init: async function () {
-    $.getJSON('../mobile-items.json', function (data) {
+    $.getJSON('../products/mobile-items.json', function (data) {
       var shopsRow = $('#shopsRow');
       var shopTemplate = $('#shopTemplate');
 

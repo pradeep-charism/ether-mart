@@ -1,54 +1,76 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>The Big Lebowski</title>
-  <link rel="stylesheet" href="css/bootstrap.min.css">
-  <link rel="stylesheet" href="css/cerulean-bootstrap.css">
-<!--  <link rel="stylesheet" href="css/amelia-bootstrap.min.css">-->
-  <link href="css/site.css" rel="stylesheet" />
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Welcome to Ether Mart!</title>
+
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+  <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
 </head>
+<style>
+    /* Remove the navbar's default rounded borders and increase the bottom margin */
+    .navbar {
+      margin-bottom: 50px;
+      border-radius: 0;
+    }
 
+    /* Remove the jumbotron's default bottom margin */
+     .jumbotron {
+      margin-bottom: 0;
+    }
+
+    /* Add a gray background color and some padding to the footer */
+    footer {
+      background-color: #f2f2f2;
+      padding: 25px;
+    }
+  </style>
+</head>
 <body>
+
+<div class="jumbotron">
+  <div class="container text-center">
+    <h1>Ether Mart!</h1>
+    <p>Your next door block chain online store</p>
+  </div>
+</div>
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Logo</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Products</a></li>
+        <li><a href="#">Deals</a></li>
+        <li><a href="#">Stores</a></li>
+        <li class="active"><a href="Contact.html">Contact</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#"><span class="glyphicon glyphicon-user"></span> My Account</a></li>
+        <li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
   <div id="page">
-    <header class="container">
-      <div id="menu" class="navbar navbar-default navbar-fixed-top">
-        <div class="navbar-header">
-          <button class="btn btn-success navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="glyphicon glyphicon-chevron-down"></span>
-          </button>
-          <div id="logo">
-            <a href='.'>
-              <h4>The Big Lebowski</h4>
-            </a>
-          </div>
-        </div>
-        <div class="navbar-collapse collapse">
-          <ul class="nav navbar-nav navbar-right">
-            <li class="nav"><a href=".">Home</a>
-            </li>
-            <li class="nav"><a href="about.html">About</a>
-            </li>
-            <li class="nav active"><a href="contact.html">Contact</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </header>
     <section id="body" class="container">
-
-      <div class="page-header">
-        <ol class="breadcrumb">
-          <li><a href="/">Home</a>
-          </li>
-          <li class="active">Contact Us</li>
-        </ol>
-        <h1>Contact Us</h1>
-      </div>
-
-      <p>This doesn't really work, but it's an example of a form. Easy, man. Relax, man.</p>
+      <p><strong>Send your queries</strong></p>
       <div class="row">
         <form class="form-horizontal">
           <div class="form-group">
@@ -148,23 +170,23 @@
       <h3>Our fake address</h3>
       <div>
         <address>
-          Big Lebowski Fan Page
-          <br />123 Main Street
-          <br />Rug Ties The Room Together, CA 98765
+          Ether Mart
+          <br />123 Tampines Street 12
+          <br />Singapore 521123
           <br />
           <abbr title="Phone">P:</abbr>
-          425.555.0100
+          +65 12312312
         </address>
         <address>
-          <strong>Support:</strong> <a href="mailto:Support@fakelebowskifansite.com">Support@fakelebowskifansite.com</a>
+          <strong>Support:</strong> <a href="mailto:Support@ethermart.com">Support@ethermart.com</a>
           <br />
-          <strong>Marketing:</strong> <a href="mailto:Marketing@fakelebowskifansite.com">Marketing@fakelebowskifansite.com</a>
+          <strong>Marketing:</strong> <a href="mailto:Marketing@ethermar.com">Marketing@ethermart.com</a>
         </address>
       </div>
     </section>
     <hr />
     <footer class="container">
-      <p>Text placeholders courtesy of <a href="http://www.lebowskiipsum.com/">Lebowski Ipsum</a>.</p>
+      <p>All rights reserved to <a href="http://www.ethermart.com/">Ether Mart</a>.</p>
 
     </footer>
   </div>

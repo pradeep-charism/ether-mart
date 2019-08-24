@@ -2,7 +2,7 @@
   "name": "ether-mart",
   "version": "1.0.0",
   "description": "",
-  "main": "index-old.html",
+  "main": "index.html",
   "directories": {
     "test": "test"
   },
