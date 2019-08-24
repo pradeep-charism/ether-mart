@@ -1,0 +1,130 @@
+[
+  {
+    "id": 0,
+    "name": "Apple iPhone Xs Max",
+    "picture": "images/mobile/AppleiPhoneXs.jpg",
+    "cost": 3,
+    "desc": "Apple iPhone Xs Max",
+    "location": "Lisco, Alabama"
+  },
+  {
+    "id": 1,
+    "name": "Huawei P20",
+    "picture": "images/mobile/HuaweiP20.jpg",
+    "cost": 3,
+    "desc": "Huawei P20",
+    "location": "Tooleville, West Virginia"
+  },
+  {
+    "id": 2,
+    "name": "Oneplus 7 Pro",
+    "picture": "images/mobile/Oneplus7Pro.jpg",
+    "cost": 2,
+    "desc": "Oneplus 7 Pro",
+    "location": "Freeburn, Idaho"
+  },
+  {
+    "id": 3,
+    "name": "Samsung Galaxy Note 10+",
+    "picture": "images/mobile/samsungGNote10plus.jpg",
+    "cost": 2,
+    "desc": "Samsung Galaxy Note 10+",
+    "location": "Camas, Pennsylvania"
+  },
+  {
+    "id": 4,
+    "name": "Apple iPhone Xs Max",
+    "picture": "images/mobile/AppleiPhoneXs.jpg",
+    "cost": 3,
+    "desc": "Apple iPhone Xs Max",
+    "location": "Lisco, Alabama"
+  },
+  {
+    "id": 5,
+    "name": "Huawei P20",
+    "picture": "images/mobile/HuaweiP20.jpg",
+    "cost": 3,
+    "desc": "Huawei P20",
+    "location": "Tooleville, West Virginia"
+  },
+  {
+    "id": 6,
+    "name": "Oneplus 7 Pro",
+    "picture": "images/mobile/Oneplus7Pro.jpg",
+    "cost": 2,
+    "desc": "Oneplus 7 Pro",
+    "location": "Freeburn, Idaho"
+  },
+  {
+    "id": 7,
+    "name": "Samsung Galaxy Note 10+",
+    "picture": "images/mobile/samsungGNote10plus.jpg",
+    "cost": 2,
+    "desc": "Samsung Galaxy Note 10+",
+    "location": "Camas, Pennsylvania"
+  },
+  {
+    "id": 8,
+    "name": "Apple iPhone Xs Max",
+    "picture": "images/mobile/AppleiPhoneXs.jpg",
+    "cost": 3,
+    "desc": "Apple iPhone Xs Max",
+    "location": "Lisco, Alabama"
+  },
+  {
+    "id": 9,
+    "name": "Huawei P20",
+    "picture": "images/mobile/HuaweiP20.jpg",
+    "cost": 3,
+    "desc": "Huawei P20",
+    "location": "Tooleville, West Virginia"
+  },
+  {
+    "id": 10,
+    "name": "Oneplus 7 Pro",
+    "picture": "images/mobile/Oneplus7Pro.jpg",
+    "cost": 2,
+    "desc": "Oneplus 7 Pro",
+    "location": "Freeburn, Idaho"
+  },
+  {
+    "id": 11,
+    "name": "Samsung Galaxy Note 10+",
+    "picture": "images/mobile/samsungGNote10plus.jpg",
+    "cost": 2,
+    "desc": "Samsung Galaxy Note 10+",
+    "location": "Camas, Pennsylvania"
+  },
+  {
+    "id": 12,
+    "name": "Apple iPhone Xs Max",
+    "picture": "images/mobile/AppleiPhoneXs.jpg",
+    "cost": 3,
+    "desc": "Apple iPhone Xs Max",
+    "location": "Lisco, Alabama"
+  },
+  {
+    "id": 12,
+    "name": "Huawei P20",
+    "picture": "images/mobile/HuaweiP20.jpg",
+    "cost": 3,
+    "desc": "Huawei P20",
+    "location": "Tooleville, West Virginia"
+  },
+  {
+    "id": 14,
+    "name": "Oneplus 7 Pro",
+    "picture": "images/mobile/Oneplus7Pro.jpg",
+    "cost": 2,
+    "desc": "Oneplus 7 Pro",
+    "location": "Freeburn, Idaho"
+  },
+  {
+    "id": 15,
+    "name": "Samsung Galaxy Note 10+",
+    "picture": "images/mobile/samsungGNote10plus.jpg",
+    "cost": 2,
+    "desc": "Samsung Galaxy Note 10+",
+    "location": "Camas, Pennsylvania"
+  }
+]

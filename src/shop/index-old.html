@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Shop Thereum</title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-sm-8 col-sm-push-2">
+            <h1 class="text-center">Shop Thereum</h1>
+            <hr/>
+            <br/>
+        </div>
+    </div>
+
+    <div id="shopsRow" class="row">
+        <!-- PRODUCTS LOAD HERE -->
+    </div>
+</div>
+
+<div id="shopTemplate" style="display: none;">
+    <div class="col-sm-6 col-md-4 col-lg-3">
+        <div class="panel panel-default panel-shop">
+            <div class="panel-heading">
+                <h3 class="panel-title">Scrappy</h3>
+            </div>
+            <div class="panel-body">
+                <img alt="140x140" data-src="holder.js/140x140" class="img-rounded img-center" style="width: 100%;"
+                     src="https://animalso.com/wp-content/uploads/2017/01/Golden-Retriever_6.jpg"
+                     data-holder-rendered="true">
+                <br/><br/>
+                <strong>Desc</strong>: <span class="shop-desc">Golden Retriever</span><br/>
+                <strong>Cost</strong>: <span class="shop-cost">3</span><br/>
+                <strong>Seller</strong>: <span class="shop-location">Warren, MI</span><br/><br/>
+                <div id="btngroup" class="btn" data-toggle="buttons-radio">
+                    <button type="button" class="btn btn-primary btn-adopt" data-id="0">Buy</button>
+                    <button type="button" class="btn btn-primary btn-release" data-id="0">Sell</button>
+                </div>
+                <button type="button" class="btn btn-default btn-show-price" data-id="0">$</button>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="js/bootstrap.min.js"></script>
+<script src="js/web3.min.js"></script>
+<script src="js/truffle-contract.js"></script>
+<script src="js/ether-mart.js"></script>
+</body>
+</html>
