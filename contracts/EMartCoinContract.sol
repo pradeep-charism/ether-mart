@@ -37,11 +37,11 @@ contract EMartCoinContract is CoinInterface, Owned {
         emit Transfer(address(0), owner, _totalSupply);
     }
 
-    function issueTokens() public returns (bool success) {
-        _totalSupply = _totalSupply.add(_unitsToIssue);
+    function issueTokens(uint etherValue) public returns (bool success) {
+        _totalSupply = _totalSupply.add(_unitsToIssue*etherValue);
 
         Token memory newToken = tokensLedger[owner];
-        newToken.units = newToken.units.add(_unitsToIssue);
+        newToken.units = newToken.units.add(_unitsToIssue*etherValue);
         newToken.holder = owner;
         tokensLedger[owner] = newToken;
         if(tokensLedger[owner].holder == 0x0000000000000000000000000000000000000000){

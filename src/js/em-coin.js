@@ -62,7 +62,8 @@ App = {
         var account = accounts[0];
         App.contracts.EMartCoinContract.deployed().then(function (instance) {
           abcoinInstance = instance;
-          return abcoinInstance.issueTokens({ from: account });
+          var etherValue= document.getElementById("buyCoins").value;
+          return abcoinInstance.issueTokens(etherValue, { from: account });
         }).then(function (result) {
           console.log("issueTokens", `${result}`);
           return App.loadOnStartup();
