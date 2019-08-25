@@ -79,7 +79,7 @@ App = {
       var account = accounts[0];
       App.contracts.ShopThereum.deployed().then(function (instance) {
         buyInstance = instance;
-        return buyInstance.buy(shopId, { from: account, value: 1000000000000000000, data: shopId });
+        return buyInstance.buy(shopId, { from: account });
       }).then(function (result) {
         return App.markSold();
       }).catch(function (err) {
