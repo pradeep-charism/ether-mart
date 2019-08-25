@@ -60,7 +60,6 @@ contract EMartCoinContract is CoinInterface, Owned {
     }
 
     function getNumberOfTokenHolders(address who) public view returns (address){
-        // bool x = tokensLedger[who]==null? true: false;
         return tokensLedger[who].holder;
     }
 

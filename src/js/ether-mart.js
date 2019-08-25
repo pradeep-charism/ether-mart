@@ -39,13 +39,6 @@ App = {
       return App.markSold();
     });
 
-    $.getJSON('EMartCoinContract.json', function (data) {
-            var ABCoinContractArtifact = data;
-            App.contracts.EMartCoinContract = TruffleContract(ABCoinContractArtifact);
-            App.contracts.EMartCoinContract.setProvider(App.web3Provider);
-            return App.loadOnStartup();
-          });
-
     return App.bindEvents();
   },
 
