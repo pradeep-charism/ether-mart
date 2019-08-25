@@ -25,23 +25,8 @@ App = {
   },
 
   initWeb3: async function () {
-
-    if (window.ethereum) {
-      App.web3Provider = window.ethereum;
-      try {
-        await window.ethereum.enable();
-      } catch (error) {
-        console.error("User denied account access")
-      }
-    }
-    else if (window.web3) {
-      App.web3Provider = window.web3.currentProvider;
-    }
-    else {
-      App.web3Provider = new Web3.providers.HttpProvider('http://localhost:7545');
-    }
+    App.web3Provider = new Web3.providers.HttpProvider('http://localhost:7545');
     var web3 = new Web3(App.web3Provider);
-
     return App.initContract();
   },
 
@@ -53,6 +38,13 @@ App = {
       App.contracts.ShopThereum.setProvider(App.web3Provider);
       return App.markSold();
     });
+
+    $.getJSON('EMartCoinContract.json', function (data) {
+            var ABCoinContractArtifact = data;
+            App.contracts.EMartCoinContract = TruffleContract(ABCoinContractArtifact);
+            App.contracts.EMartCoinContract.setProvider(App.web3Provider);
+            return App.loadOnStartup();
+          });
 
     return App.bindEvents();
   },

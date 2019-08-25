@@ -1,11 +1,11 @@
-const ABCoinContract = artifacts.require('./ABCoinContract.sol');
+const EMartCoinContract = artifacts.require('./EMartCoinContract.sol');
 
 module.exports = async function (deployer, network, accounts) {
     const wallet = accounts[0];
     let _token;
-    await deployer.deploy(ABCoinContract)
+    await deployer.deploy(EMartCoinContract)
         .then(instance => {
             _token = instance.address;
-            console.log ("ABCoin is created at address", _token);
+            console.log ("Ether Mart coin is created at address", _token);
         });
  };
