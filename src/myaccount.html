@@ -65,10 +65,20 @@
         <div class="row">
             <form class="form-horizontal">
                 <div class="form-group">
+                    <label class="control-label col-md-2">Balance at my Ether Wallet</label>
+                    <div class="col-md-5">
+                        <div id="etherBalanceGroup" class="btn input-group col-md-4">
+                            <span class="ether-balance">0</span> ETH<br/>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
                     <label class="control-label col-md-2">Exchange Ether for coins</label>
                     <div class="col-md-7">
-                        <div id="ethergroup" class="btn input-group col-md-3">
-                            <input type="number" name="nameInput" id="buyCoins" class="form-control" placeholder="e.g. Ether"/>
+                        <div id="ethergroup" class="btn input-group col-md-4">
+                            <input type="number" name="nameInput" id="buyCoins" class="form-control" placeholder="1 Ether = 10000 EMart coins"/>
                             &nbsp;&nbsp;<button type="button" class="btn btn-success btn-buy-coins">Buy Coins $</button>
                         </div>
                     </div>
@@ -77,7 +87,7 @@
                 <div class="form-group">
                     <label class="control-label col-md-2">EMart coin balance</label>
                     <div class="col-md-5">
-                        <div id="coingroup" class="btn input-group col-md-3">
+                        <div id="coingroup" class="btn input-group col-md-4">
                             <span class="balance-at">0</span><br/>
                         </button>
                         </div>
@@ -87,7 +97,7 @@
                 <div class="form-group">
                     <label class="control-label col-md-2">Sell Ether Mart Coins</label>
                     <div class="col-md-7">
-                        <div id="sellCoins" class="btn input-group col-md-3">
+                        <div id="sellCoins" class="btn input-group col-md-4">
                             <input type="number" name="sellCoinsInput" class="form-control" placeholder="e.g. EMart coins"/>
                             &nbsp;&nbsp;<button type="button" class="btn btn-success btn-sell-coins">Sell Coins $</button>
                         </div>

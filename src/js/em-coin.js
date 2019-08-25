@@ -38,6 +38,12 @@ App = {
         console.log(error);
       }
       var account = accounts[0];
+
+      var balanceWei = web3.eth.getBalance(account);
+      var balance = web3.fromWei(balanceWei, 'ether');
+        $('#etherBalanceGroup').find('.ether-balance').text(`${balance}`);
+      console.log("etherBalance", balance);
+
       emCoinDeployed.then(function (instance) {
         abcoinInstance = instance;
         return abcoinInstance.balanceOf(account, { from: account });
@@ -96,6 +102,7 @@ App = {
         });
       });
     },
+
 
 
 

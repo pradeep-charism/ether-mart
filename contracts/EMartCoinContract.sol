@@ -26,7 +26,7 @@ contract EMartCoinContract is CoinInterface, Owned {
         symbol = "EMT";
         name = "Ether Mart Coins";
         decimals = 3;
-        _unitsToIssue = 1000 * 10**uint(decimals);
+        _unitsToIssue = 10 * 10**uint(decimals);
         _totalSupply = 0;
 
         Token memory newToken;
