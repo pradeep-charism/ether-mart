@@ -14,10 +14,10 @@ App = {
 
   initContract: function () {
 
-    $.getJSON('ABCoinContract.json', function (data) {
+    $.getJSON('EMartCoinContract.json', function (data) {
       var ABCoinContractArtifact = data;
-      App.contracts.ABCoinContract = TruffleContract(ABCoinContractArtifact);
-      App.contracts.ABCoinContract.setProvider(App.web3Provider);
+      App.contracts.EMartCoinContract = TruffleContract(ABCoinContractArtifact);
+      App.contracts.EMartCoinContract.setProvider(App.web3Provider);
       return App.loadOnStartup();
     });
 
@@ -25,85 +25,30 @@ App = {
   },
 
   bindEvents: function () {
-    $(document).on('click', '.btn-show-balance', App.showTotalSupply);
-    $(document).on('click', '.btn-issue-token', App.issueTokens);
-    $(document).on('click', '.btn-transfer', App.transferTokens);
+    $(document).on('click', '.btn-buy-coins', App.issueTokens);
+    $(document).on('click', '.btn-sell-coins', App.transferTokens);
   },
 
   loadOnStartup: function (event) {
     var abcoinInstance;
-    const abcCoinDeployed = App.contracts.ABCoinContract.deployed();
+    const emCoinDeployed = App.contracts.EMartCoinContract.deployed();
 
     web3.eth.getAccounts(function (error, accounts) {
       if (error) {
         console.log(error);
       }
       var account = accounts[0];
-      abcCoinDeployed.then(function (instance) {
-        abcoinInstance = instance;
-        return abcoinInstance.totalSupply({ from: account });
-      }).then(function (result) {
-        $('#adminTemplate').find('.total-supply').text(`${result}`);
-        console.log("Total Supply", `${result}`);
-        return true;
-      }).catch(function (err) {
-        console.log(err.message);
-      });
-    });
-
-    web3.eth.getAccounts(function (error, accounts) {
-      if (error) {
-        console.log(error);
-      }
-      var account = accounts[0];
-      abcCoinDeployed.then(function (instance) {
+      emCoinDeployed.then(function (instance) {
         abcoinInstance = instance;
         return abcoinInstance.balanceOf(account, { from: account });
       }).then(function (result) {
-        $('#adminTemplate').find('.balance-at').text(`${result}`);
+        $('#coingroup').find('.balanceCoins').text(`${result}`);
         console.log("Balance at", `${result}`);
         return true;
       }).catch(function (err) {
         console.log(err.message);
       });
     });
-
-    web3.eth.getAccounts(function (error, accounts) {
-          if (error) {
-            console.log(error);
-          }
-        var account = accounts[0];
-          abcCoinDeployed.then(function (instance) {
-            abcoinInstance = instance;
-            const allTokens = abcoinInstance.getAllTokenHolders({ from: account });
-            console.log("All tokens:", allTokens);
-            return allTokens;
-          }).then(function (result) {
-//            $('#adminTemplate').find('.balance-at').text(`${result}`);
-            const res = `${result}`;
-            const allTokensLength = res[1].length;
-            console.log("All tokens length:", allTokensLength);
-            console.log("getAllTokenHolders:", res);
-
-            const FIELD_ADDR  = 0
-            const FIELD_FUNDS = 1
-
-            let peopleStructs = []
-            for (let i = 0; i < allTokensLength; i++) {
-                const Token = {
-                    holder:  res[FIELD_ADDR][i],
-                    units: res[FIELD_FUNDS][i],
-                }
-                peopleStructs.push(Token)
-            }
-
-            console.log('peopleStructs =', peopleStructs)
-
-            return true;
-          }).catch(function (err) {
-            console.log(err.message);
-          });
-        });
   },
 
   issueTokens: function (event) {
@@ -115,7 +60,7 @@ App = {
           console.log(error);
         }
         var account = accounts[0];
-        App.contracts.ABCoinContract.deployed().then(function (instance) {
+        App.contracts.EMartCoinContract.deployed().then(function (instance) {
           abcoinInstance = instance;
           return abcoinInstance.issueTokens({ from: account });
         }).then(function (result) {
@@ -139,7 +84,7 @@ App = {
         var toAccount = accounts[1];
         console.log("From account: ", fromAccount);
         console.log("To account: ", toAccount);
-        App.contracts.ABCoinContract.deployed().then(function (instance) {
+        App.contracts.EMartCoinContract.deployed().then(function (instance) {
           abcoinInstance = instance;
           return abcoinInstance.transfer(toAccount, 100000, { from: fromAccount, gas:3000000 });
         }).then(function (result) {

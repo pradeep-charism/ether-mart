@@ -52,9 +52,15 @@
     </div>
 </nav>
 
-<div id="account">
-    <section id="account-details" class="container">
-        <p><strong>Account Management</strong></p>
+<div id="account" class="container">
+    <div class="row">
+        <div class="col-xs-12 col-sm-8 col-sm-push-2">
+            <h1 class="text-left">Account Management</h1>
+            <hr/>
+            <br/>
+        </div>
+    </div>
+    <section id="account-details" class="container center">
         <div class="row">
             <form class="form-horizontal">
                 <div class="form-group">
@@ -71,7 +77,7 @@
                     <label class="control-label col-md-2">EMart coin balance</label>
                     <div class="col-md-7">
                         <div id="coingroup" class="btn input-group col-md-3">
-                            <span class="emart-coin-balance">0</span>
+                            <input type="text" name="balanceCoins" readonly class="form-control" placeholder="e.g. Ether"/>
                             &nbsp;&nbsp;<button type="button" class="btn btn-success btn-sell-coins">Sell Coins $
                         </button>
                         </div>
@@ -90,6 +96,6 @@
 
 <script src="js/jquery-2.0.3.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
-<script src="js/site.js"></script>
+<script src="js/em-coin.js"></script>
 </body>
 </html>
