@@ -11,7 +11,7 @@ contract EMartCoinContract is CoinInterface, Owned {
     uint8 public decimals;
     uint _totalSupply;
     uint _unitsToIssue;
-    address payable private _adminWallet = 0x9e93709799784b8427C1FeD4b0efe0E102334953;
+    address payable private _adminWallet;
 
 
     struct Token {
@@ -23,34 +23,36 @@ contract EMartCoinContract is CoinInterface, Owned {
 
     mapping(address => mapping(address => uint)) allowed;
 
-    constructor() public {
+    constructor(address payable owner) public payable {
         symbol = "EMT";
         name = "Ether Mart Coins";
         decimals = 3;
         _unitsToIssue = 10 * 10**uint(decimals);
         _totalSupply = 0;
+        _adminWallet = owner;
 
         Token memory newToken;
         newToken.units = _totalSupply;
-        newToken.holder = owner;
-        tokensLedger[owner] = newToken;
+        newToken.holder = _adminWallet;
+        tokensLedger[_adminWallet] = newToken;
         tokenHolders.push(owner);
-        emit Transfer(address(0), owner, _totalSupply);
+        emit Transfer(address(0), _adminWallet, _totalSupply);
     }
 
     function issueTokens(uint etherValue) public payable returns (bool success) {
         etherValue = etherValue/(10**18);
         _totalSupply = _totalSupply.add(_unitsToIssue*etherValue);
 
-        Token memory newToken = tokensLedger[owner];
+        Token memory newToken = tokensLedger[msg.sender];
         newToken.units = newToken.units.add(_unitsToIssue*etherValue);
-        newToken.holder = owner;
-        tokensLedger[owner] = newToken;
-        if(tokensLedger[owner].holder == 0x0000000000000000000000000000000000000000){
-            tokenHolders.push(owner);
+        newToken.holder = msg.sender;
+        tokensLedger[msg.sender] = newToken;
+        if(tokensLedger[msg.sender].holder == 0x0000000000000000000000000000000000000000){
+            tokenHolders.push(msg.sender);
         }
-        _adminWallet.transfer(msg.value);
-        emit Transfer(address(0), owner, _totalSupply);
+//        address(this).transfer(msg.value);
+//        _adminWallet.transfer(msg.value);
+        emit Transfer(address(0), msg.sender, _totalSupply);
     }
 
     function getTokenHoldersLength() public view returns (uint){
@@ -101,6 +103,26 @@ contract EMartCoinContract is CoinInterface, Owned {
         tokensLedger[to] = token;
 
         emit Transfer(msg.sender, to, tokens);
+        return true;
+    }
+
+    function redeemTokens(uint tokens) public payable returns (bool success) {
+        uint etherValue = tokens/(_unitsToIssue);
+        Token memory newToken = tokensLedger[msg.sender];
+        delete tokensLedger[msg.sender];
+        newToken.holder = msg.sender;
+        newToken.units = newToken.units.sub(tokens);
+        tokensLedger[msg.sender] = newToken;
+
+        if(tokensLedger[_adminWallet].holder == 0x0000000000000000000000000000000000000000){
+            tokenHolders.push(_adminWallet);
+        }
+        Token memory  token = tokensLedger[_adminWallet];
+        token.holder = _adminWallet;
+        token.units = token.units.add(tokens);
+        tokensLedger[_adminWallet] = token;
+        msg.sender.transfer(etherValue*(10**18));
+        emit Transfer(msg.sender, _adminWallet, tokens);
         return true;
     }
 

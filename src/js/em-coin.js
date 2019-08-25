@@ -26,7 +26,7 @@ App = {
 
   bindEvents: function () {
     $(document).on('click', '.btn-buy-coins', App.issueTokens);
-    $(document).on('click', '.btn-sell-coins', App.transferTokens);
+    $(document).on('click', '.btn-sell-coins', App.redeemTokens);
   },
 
   loadOnStartup: function (event) {
@@ -83,7 +83,30 @@ App = {
       });
     },
 
-    transferTokens: function (event) {
+    redeemTokens: function (event) {
+    event.preventDefault();
+
+      var abcoinInstance;
+      web3.eth.getAccounts(function (error, accounts) {
+        if (error) {
+          console.log(error);
+        }
+        var fromAccount = accounts[0];
+        console.log("From account: ", fromAccount);
+        var coinValue = document.getElementById("sellCoins").value;
+        App.contracts.EMartCoinContract.deployed().then(function (instance) {
+          abcoinInstance = instance;
+          return abcoinInstance.redeemTokens(coinValue, { from: fromAccount, value: coinValue, gas: 2100000});
+        }).then(function (result) {
+          console.log("issueTokens", `${result}`);
+          return App.loadOnStartup();
+        }).catch(function (err) {
+          console.log(err.message);
+        });
+      });
+    },
+
+transferTokens: function (event) {
     event.preventDefault();
 
       var abcoinInstance;
@@ -97,7 +120,7 @@ App = {
         console.log("To account: ", toAccount);
         App.contracts.EMartCoinContract.deployed().then(function (instance) {
           abcoinInstance = instance;
-          return abcoinInstance.transfer(toAccount, 100000, { from: fromAccount, gas:3000000 });
+          return abcoinInstance.transfer(toAccount, 100000, { from: fromAccount});
         }).then(function (result) {
           console.log("issueTokens", `${result}`);
           return App.loadOnStartup();
@@ -106,8 +129,6 @@ App = {
         });
       });
     },
-
-
 
 
 hookupMetamask: async function () {
