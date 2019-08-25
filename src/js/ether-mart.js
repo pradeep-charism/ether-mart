@@ -32,10 +32,10 @@ App = {
 
   initContract: function () {
 
-    $.getJSON('ShopThereum.json', function (data) {
-      var ShopThereumArtifact = data;
-      App.contracts.ShopThereum = TruffleContract(ShopThereumArtifact);
-      App.contracts.ShopThereum.setProvider(App.web3Provider);
+    $.getJSON('EtherMart.json', function (data) {
+      var EtherMartArtifact = data;
+      App.contracts.EtherMart = TruffleContract(EtherMartArtifact);
+      App.contracts.EtherMart.setProvider(App.web3Provider);
       return App.markSold();
     });
 
@@ -50,7 +50,7 @@ App = {
   markSold: function (products, account) {
 
     var buyInstance;
-    App.contracts.ShopThereum.deployed().then(function (instance) {
+    App.contracts.EtherMart.deployed().then(function (instance) {
       buyInstance = instance;
       return buyInstance.getProducts.call();
     }).then(function (products) {
@@ -69,15 +69,13 @@ App = {
     event.preventDefault();
 
     var shopId = parseInt($(event.target).data('id'));
-
-
     var buyInstance;
     web3.eth.getAccounts(function (error, accounts) {
       if (error) {
         console.log(error);
       }
       var account = accounts[0];
-      App.contracts.ShopThereum.deployed().then(function (instance) {
+      App.contracts.EtherMart.deployed().then(function (instance) {
         buyInstance = instance;
         return buyInstance.buy(shopId, { from: account });
       }).then(function (result) {
@@ -91,7 +89,7 @@ App = {
   markAvailable: function (products, account) {
 
     var buyInstance;
-    App.contracts.ShopThereum.deployed().then(function (instance) {
+    App.contracts.EtherMart.deployed().then(function (instance) {
       buyInstance = instance;
       return buyInstance.getProducts.call();
     }).then(function (products) {
@@ -118,7 +116,7 @@ App = {
         console.log(error);
       }
       var account = accounts[0];
-      App.contracts.ShopThereum.deployed().then(function (instance) {
+      App.contracts.EtherMart.deployed().then(function (instance) {
         buyInstance = instance;
         return buyInstance.sell(shopId, { from: account, value: 1000000000000000000 });
       }).then(function (result) {

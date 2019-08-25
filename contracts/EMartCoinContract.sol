@@ -21,6 +21,16 @@ contract EMartCoinContract is CoinInterface, Owned {
         _storage = new EternalCoinStorage();
     }
 
+    function buy(uint tokens) public payable returns (bool success) {
+        _storage.buy(msg.sender, tokens);
+        return true;
+    }
+
+    function sell(uint tokens) public payable returns (bool success) {
+        _storage.sell(msg.sender, tokens);
+        return true;
+    }
+
     function issueTokens(uint etherValue) public payable returns (bool success) {
         etherValue = etherValue/(10**18);
         _storage.depositCoin(msg.sender, _unitsToIssue*etherValue);
@@ -43,6 +53,10 @@ contract EMartCoinContract is CoinInterface, Owned {
         _storage.transfer(msg.sender, to, tokens);
         emit Transfer(msg.sender, to, tokens);
         return true;
+    }
+
+    function getAllTokenHolders() public view returns (address[] memory, uint[] memory){
+         return _storage.getAllTokenHolders();
     }
 
     function () external payable {

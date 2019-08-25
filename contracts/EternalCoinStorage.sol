@@ -47,6 +47,14 @@ contract EternalCoinStorage{
         return true;
     }
 
+    function buy(address from, uint tokens) public returns (bool success) {
+        transfer(from, _adminWallet, tokens);
+    }
+
+    function sell(address to, uint tokens) public returns (bool success) {
+        transfer(_adminWallet, to, tokens);
+    }
+
     function transfer(address from, address to, uint tokens) public returns (bool success) {
         Token memory newToken = tokensLedger[from];
         newToken.units = newToken.units.sub(tokens);
