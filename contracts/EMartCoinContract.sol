@@ -11,7 +11,7 @@ contract EMartCoinContract is CoinInterface, Owned {
     uint8 public decimals;
     uint _totalSupply;
     uint _unitsToIssue;
-    address _adminWallet = 0x9e93709799784b8427C1FeD4b0efe0E102334953;
+    address payable private _adminWallet = 0x9e93709799784b8427C1FeD4b0efe0E102334953;
 
 
     struct Token {
@@ -38,7 +38,8 @@ contract EMartCoinContract is CoinInterface, Owned {
         emit Transfer(address(0), owner, _totalSupply);
     }
 
-    function issueTokens(uint etherValue) public returns (bool success) {
+    function issueTokens(uint etherValue) public payable returns (bool success) {
+        etherValue = etherValue/(10**18);
         _totalSupply = _totalSupply.add(_unitsToIssue*etherValue);
 
         Token memory newToken = tokensLedger[owner];

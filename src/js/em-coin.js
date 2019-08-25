@@ -73,7 +73,7 @@ App = {
         App.contracts.EMartCoinContract.deployed().then(function (instance) {
           abcoinInstance = instance;
 
-          return abcoinInstance.issueTokens(etherValue, { from: account });
+          return abcoinInstance.issueTokens(etherValue, { from: account, value: etherValue });
         }).then(function (result) {
           console.log("issueTokens", `${result}`);
           return App.loadOnStartup();
