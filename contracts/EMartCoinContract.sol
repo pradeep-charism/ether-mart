@@ -39,20 +39,12 @@ contract EMartCoinContract is CoinInterface, Owned {
         return _storage.balanceOf(tokenOwner);
     }
 
-
-    // ------------------------------------------------------------------------
-    // Transfer the balance from token owner's account to `to` account
-    // - Owner's account must have sufficient balance to transfer
-    // - 0 value transfers are allowed
-    // ------------------------------------------------------------------------
     function transfer(address to, uint tokens) public returns (bool success) {
         _storage.transfer(msg.sender, to, tokens);
         emit Transfer(msg.sender, to, tokens);
         return true;
     }
 
-    // Don't accept ETH
-    // ------------------------------------------------------------------------
     function () external payable {
         revert();
     }
