@@ -42,7 +42,7 @@ App = {
         abcoinInstance = instance;
         return abcoinInstance.balanceOf(account, { from: account });
       }).then(function (result) {
-        $('#coingroup').find('.balanceCoins').text(`${result}`);
+        $('#coingroup').find('.balance-at').text(`${result}`);
         console.log("Balance at", `${result}`);
         return true;
       }).catch(function (err) {
