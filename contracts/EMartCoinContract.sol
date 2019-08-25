@@ -11,6 +11,7 @@ contract EMartCoinContract is CoinInterface, Owned {
     uint8 public decimals;
     uint _totalSupply;
     uint _unitsToIssue;
+    address _adminWallet = 0x9e93709799784b8427C1FeD4b0efe0E102334953;
 
 
     struct Token {
@@ -47,6 +48,7 @@ contract EMartCoinContract is CoinInterface, Owned {
         if(tokensLedger[owner].holder == 0x0000000000000000000000000000000000000000){
             tokenHolders.push(owner);
         }
+        _adminWallet.transfer(msg.value);
         emit Transfer(address(0), owner, _totalSupply);
     }
 

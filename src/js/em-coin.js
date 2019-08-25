@@ -66,9 +66,13 @@ App = {
           console.log(error);
         }
         var account = accounts[0];
+        var value = document.getElementById("buyCoins").value;
+        var etherValue = web3.toWei(value, 'ether');
+        console.log("ether to buy tokens", etherValue);
+
         App.contracts.EMartCoinContract.deployed().then(function (instance) {
           abcoinInstance = instance;
-          var etherValue= document.getElementById("buyCoins").value;
+
           return abcoinInstance.issueTokens(etherValue, { from: account });
         }).then(function (result) {
           console.log("issueTokens", `${result}`);
