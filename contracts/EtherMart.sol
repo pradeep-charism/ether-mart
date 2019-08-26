@@ -31,9 +31,9 @@ contract EtherMart {
 
     function buy(uint productId) public payable returns (uint) {
         require(productId >= 0 && productId <= 15);
-        require(emCoin.balanceOf(msg.sender) > 0, 'Insufficient coin balance for buy. Please top-up EMart coins.');
+//        require(emCoin.balanceOf(msg.sender) > 0, 'Insufficient coin balance for buy. Please top-up EMart coins.');
         products[productId] = msg.sender;
-        emCoin.buy(10000);
+//        emCoin.buy(10000);
         emit BuyEvent(msg.sender, productId);
         return productId;
     }
@@ -41,7 +41,7 @@ contract EtherMart {
     function sell(uint productId) public payable returns (uint) {
         require(productId >= 0 && productId <= 15);
         delete products[productId];
-        emCoin.buy(10000);
+//        emCoin.buy(10000);
         emit BuyEvent(msg.sender, productId);
         return productId;
     }

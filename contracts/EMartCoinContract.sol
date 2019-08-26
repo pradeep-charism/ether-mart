@@ -13,12 +13,47 @@ contract EMartCoinContract is CoinInterface, Owned {
     uint _unitsToIssue;
     EternalCoinStorage _storage;
 
-    constructor(address payable owner) public payable {
+    address[16] public products;
+    address payable private _buyerWallet;
+
+
+    constructor(address payable wallet) public payable {
+        require(wallet != address(0), "wallet is the zero address");
+        _buyerWallet = wallet;
+
         symbol = "EMT";
         name = "Ether Mart Coins";
         decimals = 3;
         _unitsToIssue = 10 * 10**uint(decimals);
         _storage = new EternalCoinStorage();
+    }
+
+    event BuyEvent(
+        address indexed _from,
+        uint indexed _id
+    );
+
+    event SellEvent(
+        address indexed _from,
+        uint indexed _id
+    );
+
+    function buyProduct(uint productId) public payable returns (uint) {
+        require(productId >= 0 && productId <= 15);
+        products[productId] = msg.sender;
+        emit BuyEvent(msg.sender, productId);
+        return productId;
+    }
+
+    function sellProduct(uint productId) public payable returns (uint) {
+        require(productId >= 0 && productId <= 15);
+        delete products[productId];
+        emit BuyEvent(msg.sender, productId);
+        return productId;
+    }
+
+    function getProducts() public view returns (address[16]memory) {
+        return products;
     }
 
     function buy(uint tokens) public payable returns (bool success) {
